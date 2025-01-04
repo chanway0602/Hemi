@@ -296,7 +296,7 @@ main_menu() {
         echo "3) 升级版本(0.8.0)"
         echo "4) 备份 address.json"
         echo "5) 查看日志"
-        echo "6) 退出"
+        echo "0) 退出"
         read -p "选择一个操作: " choice
 
         case $choice in
@@ -315,7 +315,7 @@ main_menu() {
             5)
                 view_logs
                 ;;
-            6)
+            0)
                 exit 0
                 ;;
             *)
