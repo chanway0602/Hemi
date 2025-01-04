@@ -91,9 +91,9 @@ generate_key() {
     check_go_version
     install_pm2
 
-    URL="https://github.com/hemilabs/heminetwork/releases/download/v0.6.0/heminetwork_v0.6.0_linux_amd64.tar.gz"
-    FILENAME="heminetwork_v0.6.0_linux_amd64.tar.gz"
-    DIRECTORY="/root/heminetwork_v0.6.0_linux_amd64"
+    URL="https://github.com/hemilabs/heminetwork/releases/download/v0.8.0/heminetwork_v0.8.0_linux_amd64.tar.gz"
+    FILENAME="heminetwork_v0.8.0_linux_amd64.tar.gz"
+    DIRECTORY="/root/heminetwork_v0.8.0_linux_amd64"
     OUTPUT_FILE="$HOME/popm-address.json"
 
     echo "正在下载 $FILENAME..."
@@ -143,7 +143,7 @@ generate_key() {
 
 # 运行节点函数
 run_node() {
-    DIRECTORY="$HOME/heminetwork_v0.6.0_linux_amd64"
+    DIRECTORY="$HOME/heminetwork_v0.8.0_linux_amd64"
 
     echo "进入目录 $DIRECTORY..."
     cd "$DIRECTORY" || { echo "目录 $DIRECTORY 不存在。"; exit 1; }
@@ -178,9 +178,9 @@ run_node() {
 
 # 升级版本函数
 upgrade_version() {
-    URL="https://github.com/hemilabs/heminetwork/releases/download/v0.6.0/heminetwork_v0.6.0_linux_amd64.tar.gz"
-    FILENAME="heminetwork_v0.6.0_linux_amd64.tar.gz"
-    DIRECTORY="/root/heminetwork_v0.6.0_linux_amd64"
+    URL="https://github.com/hemilabs/heminetwork/releases/download/v0.8.0/heminetwork_v0.8.0_linux_amd64.tar.gz"
+    FILENAME="heminetwork_v0.8.0_linux_amd64.tar.gz"
+    DIRECTORY="/root/heminetwork_v0.8.0_linux_amd64"
     ADDRESS_FILE="$HOME/popm-address.json"
     BACKUP_FILE="$HOME/popm-address.json.bak"
 
@@ -208,7 +208,7 @@ upgrade_version() {
     fi
 
     echo "删除旧版本目录..."
-    rm -rf /root/heminetwork_v0.5.0_linux_amd64
+    rm -rf /root/heminetwork_v0.6.0_linux_amd64
 
     echo "正在解压新版本..."
     tar -xzf "$FILENAME" -C /root
@@ -270,7 +270,7 @@ backup_address_json() {
 
 # 查看日志函数
 view_logs() {
-    DIRECTORY="heminetwork_v0.6.0_linux_amd64"
+    DIRECTORY="heminetwork_v0.8.0_linux_amd64"
 
     echo "进入目录 $DIRECTORY..."
     cd "$HOME/$DIRECTORY" || { echo "目录 $DIRECTORY 不存在。"; exit 1; }
@@ -293,7 +293,7 @@ main_menu() {
         echo "请选择要执行的操作:"
         echo "1) 生成密钥"
         echo "2) 运行节点"
-        echo "3) 升级版本(0.6.0)"
+        echo "3) 升级版本(0.8.0)"
         echo "4) 备份 address.json"
         echo "5) 查看日志"
         echo "6) 退出"
